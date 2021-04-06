@@ -8,9 +8,8 @@ export default function Index() {
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          To Do List
+          To Do Listd
         </Typography>
-
       </Box>
     </Container>
   );
