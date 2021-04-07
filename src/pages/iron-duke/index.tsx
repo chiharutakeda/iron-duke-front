@@ -3,7 +3,8 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import useSWR from 'swr';
-import { normalFetcher } from '../../graphql/fetcher';
+import { gqlfetcher } from '../../graphql/fetcher';
+// import { normalFetcher } from '../../graphql/fetcher';
 
 type TodoListEntity = {
   getToDolist: {
@@ -15,7 +16,7 @@ type TodoListEntity = {
   };
 };
 
-const query = `query{
+const getToDolist_Q = `query{
   getToDolist{
     id
     firstName
@@ -26,7 +27,8 @@ const query = `query{
 }`;
 
 export default function Index() {
-  const { data, error } = useSWR<TodoListEntity>(query, normalFetcher);
+  // const { data, error } = useSWR<TodoListEntity>(getToDolist_Q, normalFetcher); //普通のfetcherバージョン
+  const { data, error } = useSWR<TodoListEntity>(getToDolist_Q, gqlfetcher);
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
