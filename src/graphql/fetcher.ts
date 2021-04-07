@@ -7,7 +7,7 @@ gqlfetcherとnormalFetcherは同じ機能。methodとかheadersとか書かな�
 export const API_ENDPOINT = 'http://localhost:4000/graphql';
 
 //graphql-request使えばかなりシンプルになる
-export const gqlfetcher = (query: string) => request('/api/graphql', query);
+export const gqlfetcher = (query: string) => request(API_ENDPOINT, query);
 
 //ただのfetchでもできるけどちょっと長い
 export const normalFetcher = (query: String) =>
