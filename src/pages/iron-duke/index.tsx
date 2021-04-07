@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import useSWR from 'swr';
-import { gqlfetcher } from '../../graphql/fetcher';
+import { gqlfetcher } from '../../fetch/fetcher';
 // import { normalFetcher } from '../../graphql/fetcher';
 
 type TodoListEntity = {
