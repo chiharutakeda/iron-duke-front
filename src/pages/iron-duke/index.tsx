@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import useSWR from 'swr';
-import { gqlfetcher, API_ENDPOINT } from '../../fetch/fetcher';
+import { gqlfetcher } from '../../fetch/fetcher';
 // import { normalFetcher } from '../../graphql/fetcher';
 
 type TodoListEntity = {
@@ -26,7 +26,7 @@ const getToDolist_Q = `query{
     todo
     createdAt
   }
-}`
+}`;
 
 //変数なしmutate
 const registToDolist_M = `mutation{
@@ -36,7 +36,7 @@ const registToDolist_M = `mutation{
     lastName
     todo
   }
-}`
+}`;
 
 export default function Index() {
   // const { data, error } = useSWR<TodoListEntity>(getToDolist_Q, normalFetcher); //普通のfetcherバージョン
@@ -57,7 +57,13 @@ export default function Index() {
         <div>{data.getToDolist.todo}</div>
         <div>{data.getToDolist.createdAt}</div>
       </Box>
-      <Button variant="contained" color="primary" onClick={()=>{gqlfetcher(registToDolist_M)}}>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          gqlfetcher(registToDolist_M);
+        }}
+      >
         Primary
       </Button>
     </Container>
