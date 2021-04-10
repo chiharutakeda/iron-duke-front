@@ -4,8 +4,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import useSWR from 'swr';
-import { gqlfetcher } from '../../fetch/fetcher';
-// import { normalFetcher } from '../../graphql/fetcher';
+import { gqlfetcher } from '@/fetch/fetcher';
+// import { normalFetcher } from '@/fetch/fetcher';
 
 type TodoListEntity = {
   getToDolist: {
