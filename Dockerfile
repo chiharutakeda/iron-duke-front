@@ -1,7 +1,7 @@
 FROM node:14.16
 
 # アプリケーションディレクトリを作成する
-WORKDIR /usr/src/app
+WORKDIR /root
 
 # アプリケーションの依存関係をインストールする
 # ワイルドカードを使用して、package.json と package-lock.json の両方が確実にコピーされるようにします。
@@ -13,7 +13,8 @@ RUN npm install
 # RUN npm install --only=production
 
 # アプリケーションのソースをバンドルする
-COPY . .
+# COPY . .
 
 EXPOSE 3000
-CMD [ "npm", "run", "dev" ]
+# CMD [ "npm", "run", "dev" ]
+# CMD [ "npm", "run", "dev" ]
