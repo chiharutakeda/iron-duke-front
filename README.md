@@ -1,5 +1,8 @@
 # Next.js with TypeScript example
 
+## docker-image作成コマンド
+docker build -t chiharu/iron-duke .
+
 ## How to use
 
 Download the example [or clone the repo](https://github.com/mui-org/material-ui):
