@@ -13,46 +13,46 @@ const login = () => {
       <Typography variant="h4" component="h1" gutterBottom>
         IRON-DUKE
       </Typography>
-      <Box sx={{ my: 4 }}>
-        <form className={'login'} noValidate autoComplete="off">
-          <TextField
-            value={state.email}
-            onChange={(e) => {
-              dispatch({
-                type: 'CHANGE_EMAIL',
-                payload: e.target.value,
-              });
-            }}
-            id="standard-basic"
-            label="email"
-            required
-            margin="dense"
-          />
-          <TextField
-            value={state.password}
-            onChange={(e) => {
-              dispatch({
-                type: 'CHANGE_PASSWORD',
-                payload: e.target.value,
-              });
-            }}
-            id="outlined-basic"
-            label="Password"
-            variant="outlined"
-            required
-            margin="dense"
-          />
-          <div />
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            className={'LoginButton'}
-          >
-            Login
-          </Button>
-        </form>
-      </Box>
+      <form className={'login'} noValidate autoComplete="off">
+        <TextField
+          value={state.email}
+          onChange={(e) => {
+            dispatch({
+              type: 'CHANGE_EMAIL',
+              payload: e.target.value,
+            });
+          }}
+          id="standard-basic"
+          label="email"
+          required
+          margin="dense"
+          fullWidth
+        />
+        <TextField
+          value={state.password}
+          onChange={(e) => {
+            dispatch({
+              type: 'CHANGE_PASSWORD',
+              payload: e.target.value,
+            });
+          }}
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          required
+          margin="dense"
+          fullWidth
+        />
+        <div />
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          className={'LoginButton'}
+        >
+          Login
+        </Button>
+      </form>
     </Container>
   );
 };
