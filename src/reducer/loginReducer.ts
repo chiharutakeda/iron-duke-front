@@ -18,9 +18,9 @@ export const loginReducer = (
 ): TypeLoginForm => {
   switch (action.type) {
     case 'CHANGE_EMAIL':
-      return { ...state,email:action.payload };
+      return { ...state, email: action.payload };
     case 'CHANGE_PASSWORD':
-      return { ...state,password:action.payload };
+      return { ...state, password: action.payload };
     default:
       return { ...state };
   }
