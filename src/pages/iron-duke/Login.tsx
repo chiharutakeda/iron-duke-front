@@ -1,12 +1,12 @@
-import React, { useReducer } from 'react'
-import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
-import Container from '@material-ui/core/Container'
-import Typography from '@material-ui/core/Typography'
-import { initialLoginForm, loginReducer } from '@/reducer/loginReducer'
+import React, { useReducer } from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import { initialLoginForm, loginReducer } from '@/reducer/loginReducer';
 
 const login = () => {
-  const [state, dispatch] = useReducer(loginReducer, initialLoginForm)
+  const [state, dispatch] = useReducer(loginReducer, initialLoginForm);
   return (
     <Container maxWidth="sm">
       <Typography variant="h4" component="h1" gutterBottom>
@@ -19,7 +19,7 @@ const login = () => {
             dispatch({
               type: 'CHANGE_EMAIL',
               payload: e.target.value,
-            })
+            });
           }}
           id="standard-basic"
           label="email"
@@ -33,7 +33,7 @@ const login = () => {
             dispatch({
               type: 'CHANGE_PASSWORD',
               payload: e.target.value,
-            })
+            });
           }}
           id="outlined-basic"
           label="Password"
@@ -53,7 +53,7 @@ const login = () => {
         </Button>
       </form>
     </Container>
-  )
-}
+  );
+};
 
-export default login
+export default login;
