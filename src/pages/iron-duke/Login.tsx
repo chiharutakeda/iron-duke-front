@@ -43,12 +43,7 @@ const login = () => {
           fullWidth
         />
         <div />
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          className={'LoginButton'}
-        >
+        <Button variant="contained" color="primary" size="large" className={'LoginButton'}>
           Login
         </Button>
       </form>

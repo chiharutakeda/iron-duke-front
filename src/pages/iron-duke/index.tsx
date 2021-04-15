@@ -1,16 +1,16 @@
 import * as React from 'react';
 import Container from '@material-ui/core/Container';
 import AllToDoList from '@/components/modules/AllToDoList'
+import ToDoRegister from '@/components/modules/ToDoRegister'
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
 import useSWR from 'swr';
 import { gqlfetcher } from '@/fetch/fetcher';
 // import { normalFetcher } from '@/fetch/fetcher';
 
 type TodoListEntity = {
   getToDolist: {
-    id: Number;
+    id: number;
     firstName: String;
     lastName: String;
     todo: String;
@@ -26,16 +26,6 @@ const getToDolist_Q = `query{
     lastName
     todo
     createdAt
-  }
-}`;
-
-//変数なしmutate
-const registToDolist_M = `mutation{
-  RegistToDo(todo:{firstName:"takeday",lastName:"chiharu",todo:"nextstage"}){
-    id
-    firstName
-    lastName
-    todo
   }
 }`;
 
@@ -57,15 +47,7 @@ export default function Index() {
         <div>{data.getToDolist.todo}</div>
         <div>{data.getToDolist.createdAt}</div>
       </Box>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          gqlfetcher(registToDolist_M);
-        }}
-      >
-        Regist
-      </Button>
+      <ToDoRegister />
       <AllToDoList />
     </Container>
   );

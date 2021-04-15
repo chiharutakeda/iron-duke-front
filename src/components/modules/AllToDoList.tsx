@@ -8,7 +8,7 @@ import { gqlfetcher } from '@/fetch/fetcher';
 type TypeTodoList = {
   getAllToDolist: [
     {
-      id: Number;
+      id: number;
       firstName: String;
       lastName: String;
       todo: String;
@@ -43,12 +43,12 @@ export default function AllToDoList() {
         {data.getAllToDolist &&
           data.getAllToDolist.map((todo) => {
             return (
-              <>
+              <React.Fragment key={todo.id}>
                 <div>{todo.id}</div>
                 <div>{todo.firstName}</div>
                 <div>{todo.lastName}</div>
                 <div>{todo.todo}</div>
-              </>
+              </React.Fragment>
             );
           })}
       </Box>
