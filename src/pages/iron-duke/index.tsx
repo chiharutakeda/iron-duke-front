@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Container from '@material-ui/core/Container';
+import AllToDoList from '@/components/modules/AllToDoList'
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -44,12 +45,11 @@ export default function Index() {
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
-  console.log(data);
   return (
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          To Do Listd
+          Regist To Do
         </Typography>
         <div>{data.getToDolist.id}</div>
         <div>{data.getToDolist.firstName}</div>
@@ -64,8 +64,9 @@ export default function Index() {
           gqlfetcher(registToDolist_M);
         }}
       >
-        Primary
+        Regist
       </Button>
+      <AllToDoList />
     </Container>
   );
 }
