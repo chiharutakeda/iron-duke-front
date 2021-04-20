@@ -30,7 +30,7 @@ const getAllToDolist_Q = `query{
 
 export default function AllToDoList() {
   // const { data, error } = useSWR<TodoListEntity>(getToDolist_Q, normalFetcher); //普通のfetcherバージョン
-  const { data, error } = useSWR<TypeTodoList>(getAllToDolist_Q, gqlfetcher);
+  const { data, error } = useSWR<TypeTodoList>(getAllToDolist_Q, gqlfetcher, { refreshInterval: 3000 });
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
@@ -43,12 +43,10 @@ export default function AllToDoList() {
         {data.getAllToDolist &&
           data.getAllToDolist.map((todo) => {
             return (
-              <React.Fragment key={todo.id}>
-                <div>{todo.id}</div>
-                <div>{todo.firstName}</div>
-                <div>{todo.lastName}</div>
-                <div>{todo.todo}</div>
-              </React.Fragment>
+              <Box margin={'5px 0px 5px 0px'} padding={'0px 5px 0px 5px'} border={'1px dashed grey'} key={todo.id}>
+                <div>{'ID ' + todo.id + '   FIRSTNAME ' + todo.firstName + '   LASTNAME ' + todo.lastName}</div>
+                <div>{'TODO  ' + todo.todo}</div>
+              </Box>
             );
           })}
       </Box>
