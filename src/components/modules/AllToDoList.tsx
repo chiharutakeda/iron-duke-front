@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import DeleteButton from '@/components/atoms/DeleteButton';
 import useSWR from 'swr';
 import { gqlfetcher } from '@/fetch/fetcher';
 // import { normalFetcher } from '@/fetch/fetcher';
@@ -8,7 +9,7 @@ import { gqlfetcher } from '@/fetch/fetcher';
 type TypeTodoList = {
   getAllToDolist: [
     {
-      id: number;
+      id: string;
       firstName: String;
       lastName: String;
       todo: String;
@@ -46,6 +47,7 @@ export default function AllToDoList() {
               <Box margin={'5px 0px 5px 0px'} padding={'0px 5px 0px 5px'} border={'1px dashed grey'} key={todo.id}>
                 <div>{'ID ' + todo.id + '   FIRSTNAME ' + todo.firstName + '   LASTNAME ' + todo.lastName}</div>
                 <div>{'TODO  ' + todo.todo}</div>
+                <DeleteButton ID={Number(todo.id)}></DeleteButton>
               </Box>
             );
           })}
