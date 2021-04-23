@@ -4,34 +4,26 @@ import Box from '@material-ui/core/Box';
 import DeleteButton from '@/components/atoms/DeleteButton';
 import useSWR from 'swr';
 import { gqlfetcher } from '@/fetch/fetcher';
+import { gql } from 'graphql-request';
+import {getAllToDolist} from '@/generated/getAllToDolist'
 // import { normalFetcher } from '@/fetch/fetcher';
 
-type TypeTodoList = {
-  getAllToDolist: [
-    {
-      id: string;
-      firstName: String;
-      lastName: String;
-      todo: String;
-      createdAt: String;
-    }
-  ];
-};
-
 //変数なしquery
-const getAllToDolist_Q = `query{
-  getAllToDolist{
-    id
-    firstName
-    lastName
-    todo
-    createdAt
+const getAllToDolist_Q = gql`
+  query getAllToDolist {
+    getAllToDolist {
+      id
+      firstName
+      lastName
+      todo
+      createdAt
+    }
   }
-}`;
+`;
 
 export default function AllToDoList() {
   // const { data, error } = useSWR<TodoListEntity>(getToDolist_Q, normalFetcher); //普通のfetcherバージョン
-  const { data, error } = useSWR<TypeTodoList>(getAllToDolist_Q, gqlfetcher, { refreshInterval: 3000 });
+  const { data, error } = useSWR<getAllToDolist>(getAllToDolist_Q, gqlfetcher, { refreshInterval: 3000 });
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;

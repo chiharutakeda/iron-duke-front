@@ -22,7 +22,8 @@
     "start": "next start",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "test": "jest",
-    "format": "prettier --write ./src/**/*.{ts,tsx}"
+    "format": "prettier --write ./src/**/*.{ts,tsx}",
+    "createtype":"yarn run apollo client:codegen --target=typescript --localSchemaFile schema.gql --outputFlat --includes \"**/components/**\" --excludes \"src/generated\" src/generated "
   },
   "devDependencies": {
     "@types/jest": "^26.0.22",
