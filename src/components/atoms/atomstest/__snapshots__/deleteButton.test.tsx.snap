@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteButton 1`] = `
+<button
+  onClick={[Function]}
+  style={
+    Object {
+      "background": "#CC0000",
+      "borderRadius": "5px",
+      "borderStyle": "none",
+      "boxShadow": "1px 1px 4px",
+      "color": "black",
+      "cursor": "pointer",
+      "height": "2rem",
+      "margin": "3px 0px",
+      "width": "auto",
+    }
+  }
+>
+  Delete
+</button>
+`;
