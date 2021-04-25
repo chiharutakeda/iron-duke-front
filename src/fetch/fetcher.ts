@@ -10,8 +10,6 @@ export const API_ENDPOINT = 'http://localhost:4000/graphql';
 graphql-request使えばかなりシンプルになる
 このgqlfetcherにquery投げてもmutate投げても使える
 変数はあってもなくてもよいのでオプショナル
-
-gql`***`をgraphql-requestから読み込んで使えばqueryに変数を潜り込ませられるがまとめすぎな気がした。
 */
 export const gqlfetcher = <T>(query: string, variables?: T) => request(API_ENDPOINT, query, variables);
 
