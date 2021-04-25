@@ -53,6 +53,7 @@ const ToDoRegister = () => {
       <Button
         variant="contained"
         color="primary"
+        disabled={!state.todo.todo || !state.todo.firstName || !state.todo.lastName}
         onClick={() => {
           //stateそのまま渡せる形にしてある
           const registToDolist_V = state;
