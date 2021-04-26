@@ -1,29 +1,19 @@
 import React, { useReducer } from 'react';
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { gqlfetcher } from '@/fetch/fetcher';
-import { gql } from 'graphql-request';
+import Typography from '@material-ui/core/Typography';
+import { useRegistToDoMutation } from '@/generated/graphql';
 import { ToDoRegistReducer, initialToDoRegist } from '@/reducer/toDoRegistReducer';
 
-//この変数に与える型はサーバー側の型をschemaを参照する。
-const registToDolist_M = gql`
-  mutation RegistToDo($todo: TodoListInputType!) {
-    RegistToDo(todo: $todo) {
-      id
-      firstName
-      lastName
-      todo
-    }
-  }
-`;
-
-const ToDoRegister = () => {
+const ToDoRegisterApollo = () => {
   const [state, dispatch] = useReducer(ToDoRegistReducer, initialToDoRegist);
+  const [registToDoMutation] = useRegistToDoMutation({
+    variables: state,
+  });
   return (
     <>
       <Typography variant="h4" component="h1" gutterBottom>
-        Regist To Do
+        Regist To Do with Apollo
       </Typography>
       <form>
         <TextField
@@ -59,11 +49,7 @@ const ToDoRegister = () => {
           variant="contained"
           color="primary"
           disabled={!state.todo.todo || !state.todo.firstName || !state.todo.lastName}
-          onClick={() => {
-            //stateそのまま渡せる形にしてある
-            const registToDolist_V = state;
-            gqlfetcher(registToDolist_M, registToDolist_V);
-          }}
+          onClick={() => registToDoMutation()}
         >
           Regist
         </Button>
@@ -72,4 +58,4 @@ const ToDoRegister = () => {
   );
 };
 
-export default ToDoRegister;
+export default ToDoRegisterApollo;

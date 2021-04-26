@@ -1,0 +1,8 @@
+mutation RegistToDo($todo: TodoListInputType!) {
+  RegistToDo(todo: $todo) {
+    id
+    firstName
+    lastName
+    todo
+  }
+}

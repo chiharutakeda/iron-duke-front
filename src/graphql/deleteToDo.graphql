@@ -1,0 +1,7 @@
+mutation DeleteToDO($deleteTODO: TodoListDeleteInputType!) {
+  DeleteToDo(deleteTODO: $deleteTODO) {
+    id
+    firstName
+    lastName
+  }
+}

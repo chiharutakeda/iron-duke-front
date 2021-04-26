@@ -1,0 +1,9 @@
+query getAllToDolist {
+  getAllToDolist {
+    id
+    firstName
+    lastName
+    todo
+    createdAt
+  }
+}
