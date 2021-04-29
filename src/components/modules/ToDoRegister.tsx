@@ -27,7 +27,6 @@ const ToDoRegister = () => {
       </Typography>
       <form>
         <TextField
-          id="filled-basic"
           label="FIRST_NANE"
           fullWidth
           value={state.todo.firstName}
@@ -36,7 +35,6 @@ const ToDoRegister = () => {
           }}
         />
         <TextField
-          id="filled-basic"
           label="LAST_NAME"
           fullWidth
           value={state.todo.lastName}
@@ -45,7 +43,6 @@ const ToDoRegister = () => {
           }}
         />
         <TextField
-          id="filled-basic"
           label="TODO"
           fullWidth
           multiline={true}
