@@ -24,7 +24,7 @@ export type LoginResponse = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  RegistToDo: TodoListEntity;
+  RegistToDo?: Maybe<TodoListEntity>;
   DeleteToDo: TodoListEntity;
   Login?: Maybe<LoginResponse>;
   createUser?: Maybe<UserInfoEntity>;
@@ -128,10 +128,10 @@ export type RegistToDoMutationVariables = Exact<{
 
 export type RegistToDoMutation = (
   { __typename?: 'Mutation' }
-  & { RegistToDo: (
+  & { RegistToDo?: Maybe<(
     { __typename?: 'TodoListEntity' }
     & Pick<TodoListEntity, 'id' | 'firstName' | 'lastName' | 'todo'>
-  ) }
+  )> }
 );
 
 
