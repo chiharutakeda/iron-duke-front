@@ -13,7 +13,7 @@ const ToDoRegisterApollo = () => {
   return (
     <>
       <Typography variant="h4" component="h1" gutterBottom>
-        Regist To Do with Apollo
+        Regist with Apollo
       </Typography>
       <form>
         <TextField

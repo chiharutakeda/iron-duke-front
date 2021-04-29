@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import DeleteButtonApollo from '@/components/atoms/DeleteButtonApollo';
 import { useGetAllToDolistQuery } from '@/generated/graphql';
@@ -12,9 +11,7 @@ const AllToDoListApollo =()=> {
   return (
     <>
       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          To Do List with Apollo
-        </Typography>
+
         {data.getAllToDolist &&
           data.getAllToDolist.map((todo) => {
             return (

@@ -23,7 +23,7 @@ const ToDoRegister = () => {
   return (
     <>
       <Typography variant="h4" component="h1" gutterBottom>
-        Regist To Do
+        Regist
       </Typography>
       <form>
         <TextField

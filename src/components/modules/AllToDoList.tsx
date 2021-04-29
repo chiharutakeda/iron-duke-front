@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import DeleteButton from '@/components/atoms/DeleteButton';
 import useSWR from 'swr';
@@ -30,9 +29,6 @@ export default function AllToDoList() {
   return (
     <>
       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          To Do List
-        </Typography>
         {data.getAllToDolist &&
           data.getAllToDolist.map((todo) => {
             return (

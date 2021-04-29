@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import DeleteButtonReactQuery from '@/components/atoms/DeleteButtonReactQuery';
 import { gql } from 'graphql-request';
@@ -28,9 +27,7 @@ export default function AllToDoListReactQuery() {
   return (
     <>
       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          To Do List with react-query
-        </Typography>
+
         {data.getAllToDolist &&
           data.getAllToDolist.map((todo) => {
             return (

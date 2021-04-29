@@ -1,10 +1,9 @@
 import * as React from 'react';
-import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 import AllToDoList from '@/components/modules/AllToDoList';
 import ToDoRegister from '@/components/modules/ToDoRegister';
 import AllToDoListApollo from '@/components/modules/AllToDoListApollo';
 import ToDoRegisterApollo from '@/components/modules/ToDoRegisterApollo';
-import Box from '@material-ui/core/Box';
 
 import { ApolloProvider } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
@@ -22,22 +21,26 @@ const queryClient = new QueryClient();
 
 export default function Index() {
   return (
-    <Container maxWidth="sm">
-      <Box>
+    <Grid container justifyContent="space-around">
+      <Grid item xs={3}>
         <ToDoRegister />
         <AllToDoList />
+      </Grid>
 
+      <Grid item xs={3}>
         <ApolloProvider client={client}>
           <ToDoRegisterApollo />
           <AllToDoListApollo />
         </ApolloProvider>
+      </Grid>
 
+      <Grid item xs={3}>
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
           <ToDoRegisterReactQuery />
           <AllToDoListReactQuery />
         </QueryClientProvider>
-      </Box>
-    </Container>
+      </Grid>
+    </Grid>
   );
 }

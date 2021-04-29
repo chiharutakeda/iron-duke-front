@@ -25,7 +25,7 @@ const ToDoRegisterReactQuery = () => {
   return (
     <>
       <Typography variant="h4" component="h1" gutterBottom>
-        Regist To Do with react-query
+        Regist with react-query
       </Typography>
       <form>
         <TextField
