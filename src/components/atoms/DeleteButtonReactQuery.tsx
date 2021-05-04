@@ -1,6 +1,6 @@
 import { gqlfetcher } from '@/fetch/fetcher';
 import { useMutation } from 'react-query';
-import {deleteToDolist_M} from '@/components/atoms/DeleteButton'
+import { deleteToDolist_M } from '@/gql/gql';
 
 const style = {
   margin: '3px 0px',
@@ -15,7 +15,7 @@ const style = {
 };
 
 const DeleteButtonReactQuery = (deleteId: { ID: number }) => {
-  const {mutate} = useMutation('DeleteToDO', () => gqlfetcher(deleteToDolist_M, { deleteTODO: deleteId }));
+  const { mutate } = useMutation('DeleteToDO', () => gqlfetcher(deleteToDolist_M, { deleteTODO: deleteId }));
   return (
     <button
       style={style}
