@@ -1,17 +1,6 @@
-import { gql } from 'graphql-request';
 import { gqlfetcher } from '@/fetch/fetcher';
 import { useMutation } from 'react-query';
-
-//この変数に与える型はサーバー側の型をschemaを参照する。
-const deleteToDolist_M = gql`
-  mutation DeleteToDO($deleteTODO: TodoListDeleteInputType!) {
-    DeleteToDo(deleteTODO: $deleteTODO) {
-      id
-      firstName
-      lastName
-    }
-  }
-`;
+import {deleteToDolist_M} from '@/components/atoms/DeleteButton'
 
 const style = {
   margin: '3px 0px',

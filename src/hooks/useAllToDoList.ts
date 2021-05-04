@@ -1,19 +1,7 @@
 import useSWR from 'swr';
 import { gqlfetcher } from '@/fetch/fetcher';
-import { gql } from 'graphql-request';
 import { getAllToDolist } from '@/generated/getAllToDolist';
-
-const getAllToDolist_Q = gql`
-  query getAllToDolist {
-    getAllToDolist {
-      id
-      firstName
-      lastName
-      todo
-      createdAt
-    }
-  }
-`;
+import {getAllToDolist_Q} from '@/gql/gql'
 
 const useAllToDoList = () => {
   const { data, error } = useSWR<getAllToDolist>(getAllToDolist_Q, gqlfetcher, { refreshInterval: 3000 });

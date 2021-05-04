@@ -3,7 +3,7 @@ import { gqlfetcher } from '@/fetch/fetcher';
 import { DeleteToDOVariables } from '@/generated/DeleteToDO';
 
 //この変数に与える型はサーバー側の型をschemaを参照する。
-const deleteToDolist_M = gql`
+export const deleteToDolist_M = gql`
   mutation DeleteToDO($deleteTODO: TodoListDeleteInputType!) {
     DeleteToDo(deleteTODO: $deleteTODO) {
       id

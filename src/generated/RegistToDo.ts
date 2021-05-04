@@ -27,7 +27,7 @@ export interface RegistToDo_RegistToDo {
 }
 
 export interface RegistToDo {
-  RegistToDo: RegistToDo_RegistToDo;
+  RegistToDo: RegistToDo_RegistToDo | null;
 }
 
 export interface RegistToDoVariables {
