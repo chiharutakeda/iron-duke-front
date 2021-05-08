@@ -1,0 +1,11 @@
+.DeleteButton {
+  margin: 3px 0px;
+  height: 2rem;
+  width: auto;
+  color: white;
+  background: #CC0000;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 1px 1px 4px black;
+  cursor: pointer;
+}
