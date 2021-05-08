@@ -20,11 +20,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "rootDir": "./src",
-    "baseUrl":"./",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 }

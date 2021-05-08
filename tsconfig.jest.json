@@ -1,6 +1,11 @@
 {
   "extends": "./tsconfig.json",
+  "preset": "ts-jest",
   "compilerOptions": {
     "jsx": "react-jsx"
+  },
+  "testEnvironment": "node",
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
   },
 }
