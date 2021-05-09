@@ -6,6 +6,7 @@ import { gqlfetcher } from '@/fetch/fetcher';
 import { ToDoRegistReducer, initialToDoRegist } from '@/reducer/toDoRegistReducer';
 import { useMutation } from 'react-query';
 import { registToDolist_M } from '@/gql/gql';
+import styles from './styles/ToDoRegister.module.css';
 
 const ToDoRegisterReactQuery = () => {
   const [state, dispatch] = useReducer(ToDoRegistReducer, initialToDoRegist);
@@ -17,6 +18,7 @@ const ToDoRegisterReactQuery = () => {
       </Typography>
       <form>
         <TextField
+          className={styles.ToDoregister}
           label="FIRST_NANE"
           fullWidth
           value={state.todo.firstName}
@@ -25,6 +27,7 @@ const ToDoRegisterReactQuery = () => {
           }}
         />
         <TextField
+          className={styles.ToDoregister}
           label="LAST_NAME"
           fullWidth
           value={state.todo.lastName}
@@ -33,6 +36,7 @@ const ToDoRegisterReactQuery = () => {
           }}
         />
         <TextField
+          className={styles.ToDoregister}
           label="TODO"
           fullWidth
           multiline={true}

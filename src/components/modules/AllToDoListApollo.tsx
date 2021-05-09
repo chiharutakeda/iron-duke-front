@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@material-ui/core/Box';
 import DeleteButtonApollo from '@/components/atoms/DeleteButtonApollo';
 import useAllToDoListApollo from '@/hooks/useAllToDoListApollo';
-
+import styles from './styles/AllToDolist.module.css';
 const AllToDoListApollo = () => {
   const { getAllToDolist, error } = useAllToDoListApollo();
 
@@ -13,7 +13,7 @@ const AllToDoListApollo = () => {
       {getAllToDolist &&
         getAllToDolist.map((todo) => {
           return (
-            <Box margin={'5px 0px 5px 0px'} padding={'0px 5px 0px 5px'} border={'1px dashed grey'} key={todo.id}>
+            <Box className={styles.AllToDolist} key={todo.id}>
               <div>{'ID ' + todo.id + '   FIRSTNAME ' + todo.firstName + '   LASTNAME ' + todo.lastName}</div>
               <div>{'TODO  ' + todo.todo}</div>
               <DeleteButtonApollo ID={Number(todo.id)}></DeleteButtonApollo>

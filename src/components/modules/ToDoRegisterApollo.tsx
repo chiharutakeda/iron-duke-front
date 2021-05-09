@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { useRegistToDoMutation } from '@/generated/graphql';
 import { ToDoRegistReducer, initialToDoRegist } from '@/reducer/toDoRegistReducer';
+import styles from './styles/ToDoRegister.module.css';
 
 const ToDoRegisterApollo = () => {
   const [state, dispatch] = useReducer(ToDoRegistReducer, initialToDoRegist);
@@ -17,6 +18,7 @@ const ToDoRegisterApollo = () => {
       </Typography>
       <form>
         <TextField
+          className={styles.ToDoregister}
           label="FIRST_NANE"
           fullWidth
           value={state.todo.firstName}
@@ -25,6 +27,7 @@ const ToDoRegisterApollo = () => {
           }}
         />
         <TextField
+          className={styles.ToDoregister}
           label="LAST_NAME"
           fullWidth
           value={state.todo.lastName}
@@ -33,6 +36,7 @@ const ToDoRegisterApollo = () => {
           }}
         />
         <TextField
+          className={styles.ToDoregister}
           label="TODO"
           fullWidth
           multiline={true}

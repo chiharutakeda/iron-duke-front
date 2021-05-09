@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import { gqlfetcher } from '@/fetch/fetcher';
 import { ToDoRegistReducer, initialToDoRegist } from '@/reducer/toDoRegistReducer';
 import { registToDolist_M } from '@/gql/gql';
+import styles from './styles/ToDoRegister.module.css';
 
 const ToDoRegister = () => {
   const [state, dispatch] = useReducer(ToDoRegistReducer, initialToDoRegist);
@@ -15,6 +16,7 @@ const ToDoRegister = () => {
       </Typography>
       <form>
         <TextField
+          className={styles.ToDoregister}
           label="FIRST_NANE"
           fullWidth
           value={state.todo.firstName}
@@ -23,6 +25,7 @@ const ToDoRegister = () => {
           }}
         />
         <TextField
+          className={styles.ToDoregister}
           label="LAST_NAME"
           fullWidth
           value={state.todo.lastName}
@@ -31,6 +34,7 @@ const ToDoRegister = () => {
           }}
         />
         <TextField
+          className={styles.ToDoregister}
           label="TODO"
           fullWidth
           multiline={true}
