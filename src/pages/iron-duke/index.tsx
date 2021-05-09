@@ -4,13 +4,14 @@ import AllToDoList from '@/components/modules/AllToDoList';
 import ToDoRegister from '@/components/modules/ToDoRegister';
 import AllToDoListApollo from '@/components/modules/AllToDoListApollo';
 import ToDoRegisterApollo from '@/components/modules/ToDoRegisterApollo';
-
+import fetch from 'cross-fetch';
 import { ApolloProvider } from '@apollo/client';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
   uri: 'http://localhost:4000',
   cache: new InMemoryCache(),
+  link: new HttpLink({ uri: 'http://localhost:4000/graphql', fetch }),
 });
 
 import { QueryClient, QueryClientProvider } from 'react-query';

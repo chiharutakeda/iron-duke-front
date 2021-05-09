@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteButtonApollo 1`] = `
+<button
+  className="DeleteButton"
+  onClick={[Function]}
+>
+  Delete
+</button>
+`;
