@@ -19,7 +19,7 @@ export default function AllToDoList() {
               key={todo.id}
             >
               <div>{'ID ' + todo.id + '   FIRSTNAME ' + todo.firstName + '   LASTNAME ' + todo.lastName}</div>
-              <div>{'TODO  ' + todo.todo}</div>
+              <div className={styles.ToDolist}>{'TODO  ' + todo.todo}</div>
               <DeleteButton ID={Number(todo.id)}></DeleteButton>
             </Box>
           );

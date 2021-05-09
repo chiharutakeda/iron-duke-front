@@ -15,7 +15,7 @@ const AllToDoListApollo = () => {
           return (
             <Box className={styles.AllToDolist} key={todo.id}>
               <div>{'ID ' + todo.id + '   FIRSTNAME ' + todo.firstName + '   LASTNAME ' + todo.lastName}</div>
-              <div>{'TODO  ' + todo.todo}</div>
+              <div className={styles.ToDolist}>{'TODO  ' + todo.todo}</div>
               <DeleteButtonApollo ID={Number(todo.id)}></DeleteButtonApollo>
             </Box>
           );
