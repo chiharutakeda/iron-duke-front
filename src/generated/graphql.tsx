@@ -97,6 +97,19 @@ export type UserInfoInputType = {
   password: Scalars['String'];
 };
 
+export type CreateUserMutationMutationVariables = Exact<{
+  createUserUserData: UserInfoInputType;
+}>;
+
+
+export type CreateUserMutationMutation = (
+  { __typename?: 'Mutation' }
+  & { createUser?: Maybe<(
+    { __typename?: 'UserInfoEntity' }
+    & Pick<UserInfoEntity, 'id' | 'email' | 'password' | 'createdAt'>
+  )> }
+);
+
 export type DeleteToDoMutationVariables = Exact<{
   deleteTODO: TodoListDeleteInputType;
 }>;
@@ -135,6 +148,42 @@ export type RegistToDoMutation = (
 );
 
 
+export const CreateUserMutationDocument = gql`
+    mutation CreateUserMutation($createUserUserData: UserInfoInputType!) {
+  createUser(UserData: $createUserUserData) {
+    id
+    email
+    password
+    createdAt
+  }
+}
+    `;
+export type CreateUserMutationMutationFn = Apollo.MutationFunction<CreateUserMutationMutation, CreateUserMutationMutationVariables>;
+
+/**
+ * __useCreateUserMutationMutation__
+ *
+ * To run a mutation, you first call `useCreateUserMutationMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateUserMutationMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createUserMutationMutation, { data, loading, error }] = useCreateUserMutationMutation({
+ *   variables: {
+ *      createUserUserData: // value for 'createUserUserData'
+ *   },
+ * });
+ */
+export function useCreateUserMutationMutation(baseOptions?: Apollo.MutationHookOptions<CreateUserMutationMutation, CreateUserMutationMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<CreateUserMutationMutation, CreateUserMutationMutationVariables>(CreateUserMutationDocument, options);
+      }
+export type CreateUserMutationMutationHookResult = ReturnType<typeof useCreateUserMutationMutation>;
+export type CreateUserMutationMutationResult = Apollo.MutationResult<CreateUserMutationMutation>;
+export type CreateUserMutationMutationOptions = Apollo.BaseMutationOptions<CreateUserMutationMutation, CreateUserMutationMutationVariables>;
 export const DeleteToDoDocument = gql`
     mutation DeleteToDO($deleteTODO: TodoListDeleteInputType!) {
   DeleteToDo(deleteTODO: $deleteTODO) {

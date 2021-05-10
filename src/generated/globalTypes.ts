@@ -17,6 +17,11 @@ export interface TodoListInputType {
   todo: string;
 }
 
+export interface UserInfoInputType {
+  email: string;
+  password: string;
+}
+
 //==============================================================
 // END Enums and Input Objects
 //==============================================================
