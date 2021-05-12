@@ -1,5 +1,5 @@
 import { useDeleteToDoMutation } from '@/generated/graphql';
-import styles from './styles/Deletebutton.module.css';
+import styles from './styles/DeleteButton.module.css';
 
 const DeleteButtonApollo = (deleteId: { ID: number }) => {
   const [deleteToDoMutation] = useDeleteToDoMutation({

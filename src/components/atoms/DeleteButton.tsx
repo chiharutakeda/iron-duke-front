@@ -1,7 +1,7 @@
 import { gqlfetcher } from '@/fetch/fetcher';
 import { DeleteToDOVariables } from '@/generated/DeleteToDO';
 import { deleteToDolist_M } from '@/gql/gql';
-import styles from './styles/Deletebutton.module.css';
+import styles from './styles/DeleteButton.module.css';
 
 const DeleteButton = (deleteId: { ID: number }) => {
   return (
