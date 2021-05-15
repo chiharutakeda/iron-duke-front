@@ -4,7 +4,7 @@ import DeleteButton from '@/components/atoms/DeleteButton';
 import useAllToDoList from '@/hooks/useAllToDoList';
 import styles from './styles/AllToDolist.module.css';
 
-export default function AllToDoList() {
+const AllToDoList = () => {
   const { getAllToDolist, error } = useAllToDoList();
 
   if (error) return <div>Failed to load</div>;
@@ -14,10 +14,7 @@ export default function AllToDoList() {
       {getAllToDolist &&
         getAllToDolist.map((todo) => {
           return (
-            <Box
-              className={styles.AllToDolist}
-              key={todo.id}
-            >
+            <Box className={styles.AllToDolist} key={todo.id}>
               <div>{'ID ' + todo.id + '   FIRSTNAME ' + todo.firstName + '   LASTNAME ' + todo.lastName}</div>
               <div className={styles.ToDolist}>{'TODO  ' + todo.todo}</div>
               <DeleteButton ID={Number(todo.id)}></DeleteButton>
@@ -26,4 +23,6 @@ export default function AllToDoList() {
         })}
     </Box>
   );
-}
+};
+
+export default AllToDoList
