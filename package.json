@@ -26,7 +26,7 @@
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "test": "jest",
     "format": "prettier --write ./src/**/*.{ts,tsx}",
-    "createtype": "yarn run apollo client:codegen --target=typescript --localSchemaFile schema.gql --outputFlat --includes \"**/gql/**\" --excludes \"src/generated\" src/generated ",
+    "createtype": " apollo client:codegen --target=typescript --localSchemaFile schema.gql --outputFlat src/generated ",
     "gen": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
