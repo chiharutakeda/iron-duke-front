@@ -4,7 +4,7 @@ import DeleteButtonReactQuery from '@/components/atoms/DeleteButtonReactQuery';
 import useAllToDoListReactQuery from '@/hooks/useAllToDoListReactQuery';
 import styles from './styles/AllToDolist.module.css';
 
-export default function AllToDoListReactQuery() {
+const AllToDoListReactQuery = () => {
   const { getAllToDolist, error } = useAllToDoListReactQuery();
 
   if (error) return <div>Failed to load</div>;
@@ -23,4 +23,6 @@ export default function AllToDoListReactQuery() {
         })}
     </Box>
   );
-}
+};
+
+export default AllToDoListReactQuery;
