@@ -18,6 +18,7 @@ export const registToDolist_M = gql`
     }
   }
 `;
+
 export const getAllToDolist_Q = gql`
   query getAllToDolist {
     getAllToDolist {
