@@ -3,7 +3,7 @@
   width:100px;
   max-width: 100%;
   padding: 5px 10px;
-  background-color: #136cf3;
+  background-color: #f12a2a;
   border: 2px solid transparent;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0, .16);
@@ -14,10 +14,9 @@
   transition: 0.25s;
 }
 
-.DeleteButton:focus,
 .DeleteButton:hover
 {
   background-color: #fff;
   border-color: currentColor;
-  color:#136cf3;
+  color:#f12a2a;
 }

@@ -1,0 +1,9 @@
+.normal{
+    display: inline-block;
+    width: 100%; /*親要素いっぱい広げる*/
+    padding: 15px 15px;
+    font-size: 16px;
+    border-radius: 5px; /*ボックス角の丸み*/
+    border: 1px solid black;/*枠線*/
+    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}

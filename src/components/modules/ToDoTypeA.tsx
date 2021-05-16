@@ -16,7 +16,7 @@ const ToDoTypeA = ({ todo }: ToDoTypeA) => {
         <span>{'FIRSTNAME ' + todo.firstName}</span>
         <span>{'LASTNAME ' + todo.lastName}</span>
       </p>
-      <p>{'TODO ' + todo.todo}</p>
+      <p className={styles.ToDolist}>{'TODO ' + todo.todo}</p>
       <AtomButton
         buttonType="DELETE"
         fnc={() => {
