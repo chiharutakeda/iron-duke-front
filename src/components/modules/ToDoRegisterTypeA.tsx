@@ -1,20 +1,15 @@
 import React, { useReducer } from 'react';
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-// import { gqlfetcher } from '@/fetch/fetcher';
 import { ToDoRegistReducer, initialToDoRegist } from '@/reducer/toDoRegistReducer';
-// import { registToDolist_M } from '@/gql/gql';
-import styles from './styles/ToDoRegister.module.css';
 import { registToDolist } from '@/fetch/fetcher';
+import styles from './styles/ToDoRegister.module.css';
+import AtomButton from '@/components/atoms/AtomButton';
 
-const ToDoRegister = () => {
+const ToDoRegisterTypeA = () => {
   const [state, dispatch] = useReducer(ToDoRegistReducer, initialToDoRegist);
   return (
     <>
-      <Typography variant="h4" component="h1" gutterBottom>
-        Regist
-      </Typography>
+      <h1>Regist TypeA</h1>
       <form>
         <TextField
           className={styles.ToDoregister}
@@ -45,18 +40,14 @@ const ToDoRegister = () => {
             dispatch({ type: 'CHANGE_TODO', payload: e.target.value });
           }}
         />
-        <Button
-          variant="contained"
-          color="primary"
-          disabled={!state.todo.todo || !state.todo.firstName || !state.todo.lastName}
-          onClick={()=>{registToDolist(state)}}
-        >
-          Regist
-        </Button>
+        <AtomButton
+          buttonType="REGIST"
+          isDisable={!state.todo.todo || !state.todo.firstName || !state.todo.lastName}
+          fnc={()=>registToDolist(state)}
+        />
       </form>
     </>
   );
 };
 
-
-export default ToDoRegister;
+export default ToDoRegisterTypeA;

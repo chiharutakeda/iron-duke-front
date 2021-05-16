@@ -1,5 +1,7 @@
 import { request } from 'graphql-request';
-
+import { DeleteToDOVariables } from '@/generated/DeleteToDO';
+import { RegistToDoVariables } from '@/generated/RegistToDo';
+import {deleteToDolist_M,registToDolist_M} from '@/gql/gql'
 /*
 gqlfetcherとnormalFetcherは同じ機能。methodとかheadersとか書かなくてよくなるしres.jsonとかも
 内包してもらえて短く書ける
@@ -13,8 +15,16 @@ graphql-request使えばかなりシンプルになる
 */
 export const gqlfetcher = <T>(query: string, variables?: T) => request(API_ENDPOINT, query, variables);
 
+export const deleteToDolist = async (variables: DeleteToDOVariables) => {
+  await request(API_ENDPOINT, deleteToDolist_M, variables);
+};
+
+export const registToDolist = async (variables: RegistToDoVariables) => {
+  await request(API_ENDPOINT, registToDolist_M, variables);
+};
+
 //ただのfetchでもできるけどちょっと長い
-export const normalFetcher = (query: String) =>
+export const normalFetcher = (query: String) => {
   fetch(API_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -24,3 +34,4 @@ export const normalFetcher = (query: String) =>
   })
     .then((res) => res.json())
     .then((json) => json.data);
+};
