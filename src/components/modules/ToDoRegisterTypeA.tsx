@@ -1,9 +1,9 @@
 import React, { useReducer } from 'react';
-import TextField from '@material-ui/core/TextField';
 import { ToDoRegistReducer, initialToDoRegist } from '@/reducer/toDoRegistReducer';
 import { registToDolist } from '@/fetch/fetcher';
-import styles from './styles/ToDoRegister.module.css';
 import AtomButton from '@/components/atoms/AtomButton';
+import AtomText from '@/components/atoms/AtomText';
+import AtomTextArea from '@/components/atoms/AtomTextArea';
 
 const ToDoRegisterTypeA = () => {
   const [state, dispatch] = useReducer(ToDoRegistReducer, initialToDoRegist);
@@ -11,39 +11,34 @@ const ToDoRegisterTypeA = () => {
     <>
       <h1>Regist TypeA</h1>
       <form>
-        <TextField
-          className={styles.ToDoregister}
-          label="FIRST_NANE"
-          fullWidth
+        <AtomText
+          className="NORMAL"
           value={state.todo.firstName}
-          onChange={(e) => {
+          placeholder="田中"
+          onChangeFnc={(e) => {
             dispatch({ type: 'CHANGE_FIRST_NAME', payload: e.target.value });
           }}
         />
-        <TextField
-          className={styles.ToDoregister}
-          label="LAST_NAME"
-          fullWidth
+        <AtomText
+          className="NORMAL"
           value={state.todo.lastName}
-          onChange={(e) => {
+          placeholder="太郎"
+          onChangeFnc={(e) => {
             dispatch({ type: 'CHANGE_LAST_NAME', payload: e.target.value });
           }}
         />
-        <TextField
-          className={styles.ToDoregister}
-          label="TODO"
-          fullWidth
-          multiline={true}
-          rows="3"
+        <AtomTextArea
+          className="NORMAL"
           value={state.todo.todo}
-          onChange={(e) => {
+          placeholder="TODO"
+          onChangeFnc={(e:React.ChangeEvent<HTMLTextAreaElement>) => {
             dispatch({ type: 'CHANGE_TODO', payload: e.target.value });
           }}
         />
         <AtomButton
           buttonType="REGIST"
           isDisable={!state.todo.todo || !state.todo.firstName || !state.todo.lastName}
-          fnc={()=>registToDolist(state)}
+          fnc={() => registToDolist(state)}
         />
       </form>
     </>

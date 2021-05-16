@@ -3,7 +3,7 @@
   width:100px;
   max-width: 100%;
   padding: 0.3em 0.3em;
-  background-color: #e25c00;
+  background-color: #3350f5;
   border: 2px solid transparent;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0, .16);
@@ -14,10 +14,9 @@
   transition: 0.25s;
 }
 
-.RegistButton:focus,
 .RegistButton:hover
 {
   background-color: #fff;
   border-color: currentColor;
-  color:#e25c00;
+  color:#3350f5;
 }
