@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SurbeySecond 1`] = `
+Array [
+  <div>
+    SurbeySecond
+  </div>,
+  <button
+    onClick={[Function]}
+  >
+    次へ
+  </button>,
+]
+`;
