@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import SurbeyFirst from '@/components/organisms/survey/SurbeyFirst';
 import SurbeySecond from '@/components/organisms/survey/SurbeySecond';
 import SurbeyThird from '@/components/organisms/survey/SurbeyThird';
+import SurbeyFinish from '@/components/organisms/survey/SurbeyFinish';
 
 const Surbey = () => {
   const router = useRouter();
@@ -27,8 +28,8 @@ export const switchPage = (pid:string) => {
       return <SurbeySecond />;
     case 'SurbeyThird':
       return <SurbeyThird />;
-    default:
-      return <></>;
+      default:
+      return <SurbeyFinish />;
   }
 };
 
