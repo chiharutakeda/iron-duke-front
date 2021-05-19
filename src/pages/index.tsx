@@ -23,6 +23,11 @@ export default function Index() {
             <a>REGISTER</a>
           </Link>
         </Typography>
+        <Typography variant="h4" component="h1" gutterBottom>
+          <Link href="http://localhost:3000/surbey/SurbeyFirst">
+            <a>SURBEY</a>
+          </Link>
+        </Typography>
       </Box>
     </Container>
   );
