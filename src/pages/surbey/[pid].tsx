@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Layout from '@/components/templates/Layout'
 import SurbeyFirst from '@/components/organisms/survey/SurbeyFirst';
 import SurbeySecond from '@/components/organisms/survey/SurbeySecond';
 import SurbeyThird from '@/components/organisms/survey/SurbeyThird';
@@ -31,7 +32,7 @@ const Surbey = () => {
   const surbeyJSX = switchPage(pid);
 
   //contextでラップする。
-  return <SurbeyContext>{surbeyJSX}</SurbeyContext>;
+  return <Layout><SurbeyContext>{surbeyJSX}</SurbeyContext></Layout>;
 };
 
 export default Surbey;

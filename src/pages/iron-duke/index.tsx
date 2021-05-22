@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Layout from '@/components/templates/Layout';
 import Grid from '@material-ui/core/Grid';
 import AllToDoList from '@/components/modules/AllToDoList';
 import AllToDoListTypeA from '@/components/organisms/AllToDoListTypeA';
@@ -28,31 +29,33 @@ const queryClient = new QueryClient();
 
 export default function Index() {
   return (
-    <Grid container justifyContent="space-around">
-      <Grid item xs={4}>
-        <ToDoRegister />
-        <AllToDoList />
-      </Grid>
+    <Layout>
+      <Grid container justifyContent="space-around">
+        <Grid item xs={4}>
+          <ToDoRegister />
+          <AllToDoList />
+        </Grid>
 
-      <Grid item xs={4}>
-        <ApolloProvider client={client}>
-          <ToDoRegisterApollo />
-          <AllToDoListApollo />
-        </ApolloProvider>
-      </Grid>
+        <Grid item xs={4}>
+          <ApolloProvider client={client}>
+            <ToDoRegisterApollo />
+            <AllToDoListApollo />
+          </ApolloProvider>
+        </Grid>
 
-      <Grid item xs={4}>
-        <QueryClientProvider client={queryClient}>
-          <ReactQueryDevtools initialIsOpen={false} />
-          <ToDoRegisterReactQuery />
-          <AllToDoListReactQuery />
-        </QueryClientProvider>
-      </Grid>
+        <Grid item xs={4}>
+          <QueryClientProvider client={queryClient}>
+            <ReactQueryDevtools initialIsOpen={false} />
+            <ToDoRegisterReactQuery />
+            <AllToDoListReactQuery />
+          </QueryClientProvider>
+        </Grid>
 
-      <Grid item xs={4}>
-        <ToDoRegisterTypeA />
-        <AllToDoListTypeA />
+        <Grid item xs={4}>
+          <ToDoRegisterTypeA />
+          <AllToDoListTypeA />
+        </Grid>
       </Grid>
-    </Grid>
+    </Layout>
   );
 }
