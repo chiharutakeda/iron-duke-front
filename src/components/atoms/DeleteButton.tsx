@@ -8,7 +8,9 @@ const DeleteButton = (deleteId: { ID: number }) => {
     <button
       className={styles.DeleteButton}
       onClick={() => {
-        const deleteToDolist_V: DeleteToDOVariables = { deleteTODO: deleteId };
+        const deleteToDolist_V: DeleteToDOVariables = {
+          deleteTODO: deleteId,
+        };
         gqlfetcher(deleteToDolist_M, deleteToDolist_V);
       }}
     >

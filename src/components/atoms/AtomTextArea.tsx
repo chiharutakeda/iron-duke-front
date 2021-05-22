@@ -17,9 +17,22 @@ export const returnStyle = (className: TextAreaType) => {
   }
 };
 
-const AtomTextArea = ({ className, value, placeholder, onChangeFnc }: AtomTextAreaType) => {
+const AtomTextArea = ({
+  className,
+  value,
+  placeholder,
+  onChangeFnc,
+}: AtomTextAreaType) => {
   const style = returnStyle(className);
-  return <textarea className={style} value={value} placeholder={placeholder} onChange={onChangeFnc} rows={3} />;
+  return (
+    <textarea
+      className={style}
+      value={value}
+      placeholder={placeholder}
+      onChange={onChangeFnc}
+      rows={3}
+    />
+  );
 };
 
 export default AtomTextArea;

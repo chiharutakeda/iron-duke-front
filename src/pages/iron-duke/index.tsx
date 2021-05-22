@@ -8,7 +8,11 @@ import AllToDoListApollo from '@/components/modules/AllToDoListApollo';
 import ToDoRegisterApollo from '@/components/modules/ToDoRegisterApollo';
 import fetch from 'cross-fetch';
 import { ApolloProvider } from '@apollo/client';
-import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
+import {
+  ApolloClient,
+  InMemoryCache,
+  HttpLink,
+} from '@apollo/client';
 
 export const client = new ApolloClient({
   uri: 'http://localhost:4000',

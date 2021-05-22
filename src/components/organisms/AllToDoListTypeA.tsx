@@ -10,7 +10,7 @@ const AllToDoListTypeA = () => {
   return (
     <>
       {getAllToDolist.map((todo) => {
-        return <ToDoTypeA todo={todo} key={todo.id}/>;
+        return <ToDoTypeA todo={todo} key={todo.id} />;
       })}
     </>
   );

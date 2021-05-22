@@ -3,11 +3,17 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { useRegistToDoMutation } from '@/generated/graphql';
-import { ToDoRegistReducer, initialToDoRegist } from '@/reducer/toDoRegistReducer';
+import {
+  ToDoRegistReducer,
+  initialToDoRegist,
+} from '@/reducer/toDoRegistReducer';
 import styles from './styles/ToDoRegister.module.css';
 
 const ToDoRegisterApollo = () => {
-  const [state, dispatch] = useReducer(ToDoRegistReducer, initialToDoRegist);
+  const [state, dispatch] = useReducer(
+    ToDoRegistReducer,
+    initialToDoRegist
+  );
   const [registToDoMutation] = useRegistToDoMutation({
     variables: state,
   });
@@ -23,7 +29,10 @@ const ToDoRegisterApollo = () => {
           fullWidth
           value={state.todo.firstName}
           onChange={(e) => {
-            dispatch({ type: 'CHANGE_FIRST_NAME', payload: e.target.value });
+            dispatch({
+              type: 'CHANGE_FIRST_NAME',
+              payload: e.target.value,
+            });
           }}
         />
         <TextField
@@ -32,7 +41,10 @@ const ToDoRegisterApollo = () => {
           fullWidth
           value={state.todo.lastName}
           onChange={(e) => {
-            dispatch({ type: 'CHANGE_LAST_NAME', payload: e.target.value });
+            dispatch({
+              type: 'CHANGE_LAST_NAME',
+              payload: e.target.value,
+            });
           }}
         />
         <TextField
@@ -43,13 +55,20 @@ const ToDoRegisterApollo = () => {
           rows="3"
           value={state.todo.todo}
           onChange={(e) => {
-            dispatch({ type: 'CHANGE_TODO', payload: e.target.value });
+            dispatch({
+              type: 'CHANGE_TODO',
+              payload: e.target.value,
+            });
           }}
         />
         <Button
           variant="contained"
           color="primary"
-          disabled={!state.todo.todo || !state.todo.firstName || !state.todo.lastName}
+          disabled={
+            !state.todo.todo ||
+            !state.todo.firstName ||
+            !state.todo.lastName
+          }
           onClick={() => registToDoMutation()}
         >
           Regist

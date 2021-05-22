@@ -3,10 +3,16 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import { initialLoginForm, loginReducer } from '@/reducer/loginReducer';
+import {
+  initialLoginForm,
+  loginReducer,
+} from '@/reducer/loginReducer';
 
 const login = () => {
-  const [state, dispatch] = useReducer(loginReducer, initialLoginForm);
+  const [state, dispatch] = useReducer(
+    loginReducer,
+    initialLoginForm
+  );
   return (
     <Container maxWidth="sm">
       <Typography variant="h4" component="h1" gutterBottom>
@@ -43,7 +49,12 @@ const login = () => {
           fullWidth
         />
         <div />
-        <Button variant="contained" color="primary" size="large" className={'LoginButton'}>
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          className={'LoginButton'}
+        >
           Login
         </Button>
       </form>

@@ -4,7 +4,9 @@ import { deleteToDolist_M } from '@/gql/gql';
 import styles from './styles/DeleteButton.module.css';
 
 const DeleteButtonReactQuery = (deleteId: { ID: number }) => {
-  const { mutate } = useMutation('DeleteToDO', () => gqlfetcher(deleteToDolist_M, { deleteTODO: deleteId }));
+  const { mutate } = useMutation('DeleteToDO', () =>
+    gqlfetcher(deleteToDolist_M, { deleteTODO: deleteId })
+  );
   return (
     <button
       className={styles.DeleteButton}

@@ -6,7 +6,6 @@ import SurbeyThird from '@/components/organisms/survey/SurbeyThird';
 import SurbeyFinish from '@/components/organisms/survey/SurbeyFinish';
 import SurbeyContext from '@/context/SurbeyContext';
 
-
 //urlからpidを取り出す
 export const getPidFromPath = (path: string) => {
   return path.split('/')[2];
@@ -26,7 +25,6 @@ export const switchPage = (pid: string) => {
   }
 };
 const Surbey = () => {
-
   const router = useRouter();
   const path = router.asPath;
   const pid = getPidFromPath(path);

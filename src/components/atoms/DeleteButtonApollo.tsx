@@ -8,7 +8,10 @@ const DeleteButtonApollo = (deleteId: { ID: number }) => {
     },
   });
   return (
-    <button className={styles.DeleteButton} onClick={() => deleteToDoMutation()}>
+    <button
+      className={styles.DeleteButton}
+      onClick={() => deleteToDoMutation()}
+    >
       Delete
     </button>
   );

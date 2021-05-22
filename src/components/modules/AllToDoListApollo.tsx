@@ -14,9 +14,20 @@ const AllToDoListApollo = () => {
         getAllToDolist.map((todo) => {
           return (
             <Box className={styles.AllToDolist} key={todo.id}>
-              <div>{'ID ' + todo.id + '   FIRSTNAME ' + todo.firstName + '   LASTNAME ' + todo.lastName}</div>
-              <div className={styles.ToDolist}>{'TODO  ' + todo.todo}</div>
-              <DeleteButtonApollo ID={Number(todo.id)}></DeleteButtonApollo>
+              <div>
+                {'ID ' +
+                  todo.id +
+                  '   FIRSTNAME ' +
+                  todo.firstName +
+                  '   LASTNAME ' +
+                  todo.lastName}
+              </div>
+              <div className={styles.ToDolist}>
+                {'TODO  ' + todo.todo}
+              </div>
+              <DeleteButtonApollo
+                ID={Number(todo.id)}
+              ></DeleteButtonApollo>
             </Box>
           );
         })}
