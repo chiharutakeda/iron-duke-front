@@ -19,7 +19,10 @@ export type TypeContext = {
   dispatch: React.Dispatch<TypeSurbeyAction>;
   state: TypeSurbey;
 };
-export const surbeyReducer = (state: TypeSurbey, action: TypeSurbeyAction): TypeSurbey => {
+export const surbeyReducer = (
+  state: TypeSurbey,
+  action: TypeSurbeyAction
+): TypeSurbey => {
   switch (action.type) {
     case 'CHANGE_IMPRESSIONFIRST':
       return { ...state, impressionFirst: action.payload };

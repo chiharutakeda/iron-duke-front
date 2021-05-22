@@ -20,7 +20,11 @@ export const returnStyle = (buttonType: buttonType) => {
   }
 };
 
-const AtomButton = ({ buttonType, isDisable = false, fnc }: AtomButtonType) => {
+const AtomButton = ({
+  buttonType,
+  isDisable = false,
+  fnc,
+}: AtomButtonType) => {
   const style = returnStyle(buttonType);
   return (
     <button

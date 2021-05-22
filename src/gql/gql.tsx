@@ -32,7 +32,9 @@ export const getAllToDolist_Q = gql`
 `;
 
 export const createUser_M = gql`
-  mutation CreateUserMutation($createUserUserData: UserInfoInputType!) {
+  mutation CreateUserMutation(
+    $createUserUserData: UserInfoInputType!
+  ) {
     createUser(UserData: $createUserUserData) {
       id
       email

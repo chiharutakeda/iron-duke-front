@@ -21,14 +21,26 @@ type TypeToDoRegist =
   | { type: 'CHANGE_LAST_NAME'; payload: string }
   | { type: 'CHANGE_TODO'; payload: string };
 
-export const ToDoRegistReducer = (state: TypeToDoRegistState, action: TypeToDoRegist): TypeToDoRegistState => {
+export const ToDoRegistReducer = (
+  state: TypeToDoRegistState,
+  action: TypeToDoRegist
+): TypeToDoRegistState => {
   switch (action.type) {
     case 'CHANGE_FIRST_NAME':
-      return { ...state, todo: { ...state.todo, firstName: action.payload } };
+      return {
+        ...state,
+        todo: { ...state.todo, firstName: action.payload },
+      };
     case 'CHANGE_LAST_NAME':
-      return { ...state, todo: { ...state.todo, lastName: action.payload } };
+      return {
+        ...state,
+        todo: { ...state.todo, lastName: action.payload },
+      };
     case 'CHANGE_TODO':
-      return { ...state, todo: { ...state.todo, todo: action.payload } };
+      return {
+        ...state,
+        todo: { ...state.todo, todo: action.payload },
+      };
     default:
       return { ...state };
   }

@@ -17,9 +17,22 @@ export const returnStyle = (className: TextType) => {
   }
 };
 
-const AtomText = ({ className, value, placeholder, onChangeFnc }: AtomTextType) => {
+const AtomText = ({
+  className,
+  value,
+  placeholder,
+  onChangeFnc,
+}: AtomTextType) => {
   const style = returnStyle(className);
-  return <input type="text" className={style} value={value} placeholder={placeholder} onChange={onChangeFnc} />;
+  return (
+    <input
+      type="text"
+      className={style}
+      value={value}
+      placeholder={placeholder}
+      onChange={onChangeFnc}
+    />
+  );
 };
 
 export default AtomText;

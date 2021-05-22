@@ -15,9 +15,20 @@ const AllToDoListReactQuery = () => {
         getAllToDolist.map((todo) => {
           return (
             <Box className={styles.AllToDolist} key={todo.id}>
-              <div>{'ID ' + todo.id + '   FIRSTNAME ' + todo.firstName + '   LASTNAME ' + todo.lastName}</div>
-              <div className={styles.ToDolist}>{'TODO  ' + todo.todo}</div>
-              <DeleteButtonReactQuery ID={Number(todo.id)}></DeleteButtonReactQuery>
+              <div>
+                {'ID ' +
+                  todo.id +
+                  '   FIRSTNAME ' +
+                  todo.firstName +
+                  '   LASTNAME ' +
+                  todo.lastName}
+              </div>
+              <div className={styles.ToDolist}>
+                {'TODO  ' + todo.todo}
+              </div>
+              <DeleteButtonReactQuery
+                ID={Number(todo.id)}
+              ></DeleteButtonReactQuery>
             </Box>
           );
         })}
