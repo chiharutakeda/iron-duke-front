@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToDotypeA 1`] = `
+<div
+  className="AllToDolist"
+>
+  <p>
+    <span>
+      ID 61
+    </span>
+    <span>
+      FIRSTNAME dddd
+    </span>
+    <span>
+      LASTNAME fcf
+    </span>
+  </p>
+  <p
+    className="ToDolist"
+  >
+    TODO ddd
+  </p>
+  <button
+    className="DeleteButton"
+    disabled={false}
+    onClick={[Function]}
+  >
+    DELETE
+  </button>
+</div>
+`;
